@@ -1,0 +1,12 @@
+{
+  "env": {
+    "commonjs": true
+  },
+  "rules": {
+    // All needed packages for example app are defined as devDependencies,
+    // so we have to suppress eslint warnings about that at all:
+    // TODO: turn this on and find a way to resolve eslint error aobut missing dependency:
+    // "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/no-extraneous-dependencies": ["off", {"devDependencies": true}]
+  }
+}
