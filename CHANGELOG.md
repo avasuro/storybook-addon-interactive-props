@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-alpha.4](https://github.com/avasuro/storybook-addon-interactive-props/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2019-09-09)
+
+
+### Bug Fixes
+
+* package fails to install using npm on windows ([b0c0c31](https://github.com/avasuro/storybook-addon-interactive-props/commit/b0c0c31))
+
 ## [1.0.0-alpha.3](https://github.com/avasuro/storybook-addon-interactive-props/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2019-09-09)
 
 
