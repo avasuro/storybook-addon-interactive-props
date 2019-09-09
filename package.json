@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "release": "HUSKY_SKIP_HOOKS=1 standard-version",
-    "postinstall": "link-module-alias",
-    "start:example": "npm run build && start-storybook -p 6006 -c ./example-usage/.storybook -s ./example-usage",
+    "postinstall": "command -v link-module-alias && link-module-alias",
+    "start:example": "link-module-alias && npm run build && start-storybook -p 6006 -c ./example-usage/.storybook -s ./example-usage",
     "build": "rimraf ./dist && babel src --out-dir ./dist",
     "lint": "eslint --color ."
   },
