@@ -9,6 +9,7 @@ import {STORY_CHANGED} from '@storybook/core-events';
 import {JsonFormsReduxContext, JsonFormsDispatch} from '@jsonforms/react';
 import {Actions, jsonformsReducer} from '@jsonforms/core';
 import {materialRenderers, materialCells} from '@jsonforms/material-renderers';
+import rfdc from 'rfdc';
 
 const PanelWrapper = styled(({children, className}) => (
     <ScrollArea horizontal vertical className={className}>
@@ -78,7 +79,7 @@ export default class InteractivePropsForm extends PureComponent {
             // We have to make deep copy of options object because in some cases
             // jsonform library mutates deep props in this object, and after such
             // mutations "onOptionsSet" handler may behave improperly:
-            this.lastSetOptions = JSON.parse(JSON.stringify(options));
+            this.lastSetOptions = rfdc({proto: false, circles: false})(options);
             this.store.dispatch(
                 Actions.init(options.initialProps || {}, options.schema, options.uischema)
             );

@@ -2,6 +2,7 @@ import equal from 'fast-deep-equal';
 import objectPath from 'object-path';
 import schemasaurus from 'schemasaurus';
 import copy from 'copy-to-clipboard';
+import rfdc from 'rfdc';
 import addons, {makeDecorator} from '@storybook/addons';
 import {FORCE_RE_RENDER, REGISTER_SUBSCRIPTION} from '@storybook/core-events';
 import {constantsBuilder} from '../shared';
@@ -43,8 +44,7 @@ function getUsageAPI(addonId) {
                 }
 
                 function jsonGetter({omitDefaultProps}) {
-                    // TODO: may be invent better approach to make deep copy of object:
-                    const result = JSON.parse(JSON.stringify(props));
+                    const result = rfdc({proto: false, circles: false})(props);
                     if (omitDefaultProps && schema) {
                         let compilator = schemasaurus.compile(schema, () => ({
                             '[default]': function handleItemWithDefaultValue(itemSchema, itemValue, ctx) {

@@ -50,6 +50,7 @@
     "fast-deep-equal": "2.0.1",
     "object-path": "0.11.4",
     "prop-types": "15.7.2",
+    "rfdc": "1.1.4",
     "schemasaurus": "0.7.8"
   },
   "devDependencies": {
