@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-interactive-props",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Addon for Storybook that allows to to edit props dynamically using the Storybook UI",
   "main": "dist/index.js",
   "scripts": {
